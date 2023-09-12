@@ -1,8 +1,6 @@
 from django.contrib import admin
 from .models import Packages,TravelItinerary,Event
-# Register your models here.
 from django.forms.widgets import TextInput
-
 from django.db import models
 from django import forms
 

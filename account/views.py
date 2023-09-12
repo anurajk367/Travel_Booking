@@ -153,10 +153,29 @@ class Upcomingeventview(ListView):
 
 
 
-@method_decorator(decs,name='dispatch')
-class Mytripview(View):
-    def get (self,request):
-        return render(request,'mytrip.html')
+
+    
+@method_decorator(decs,name='dispatch')    
+class Mytripview(ListView):
+    template_name="mytrip.html"
+    queryset=Intrested.objects.all()
+    context_object_name="mytrip"
+
+    def get_queryset(self):
+        return Booked.objects.filter(user=self.request.user)
+    
+
+
+
+@method_decorator(decs,name='dispatch')    
+class Mytripdetail(DetailView):
+    template_name="mytripdetail.html"
+    pk_url_kwarg='id'
+    queryset=Booked.objects.all()
+    context_object_name="book"
+
+    def get_queryset(self):
+        return Booked.objects.filter(user=self.request.user)
     
 
 
@@ -193,11 +212,11 @@ class Paymentview(TemplateView):
 
     def post(self,request,*args,**kwargs):
         Pid=kwargs.get("id")
-        pack=Intrested.objects.get(id=Pid)
+        int=Intrested.objects.get(id=Pid)
         user=request.user
         ad=request.POST.get("adrs")
         phn=request.POST.get("phn")
-        Booked.objects.create(package=pack,address=ad,user=user,phone=phn)
+        Booked.objects.create(package=int.package,address=ad,user=user,phone=phn)
         print('success')
         # pack.objects.delete()
         messages.success(request,"order placed..!")

@@ -20,6 +20,8 @@ urlpatterns=[
     path('inpackagedetail/<int:id>',Intrestedpackagedetailview.as_view(),name='inpackagedetail'),
     path('payment/<int:id>',Paymentview.as_view(),name='payment'),
     path('removeint/<int:id>',Removeintrest,name='removeint'),
+    path('mytripdetail/<int:id>',Mytripdetail.as_view(),name='mytripdetail'),
+
 
     
 

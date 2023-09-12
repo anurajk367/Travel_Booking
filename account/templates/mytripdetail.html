@@ -11,10 +11,10 @@
      <header class="header slider">
         <div class="owl-carousel owl-theme">
             <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{int.package.image.url}}"></div>
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{int.package.image2.url}}"></div>
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{int.package.image.url}}"></div>
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{int.package.image3.url}}"></div>
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{book.package.image.url}}"></div>
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{book.package.image2.url}}"></div>
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{book.package.image.url}}"></div>
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{book.package.image3.url}}"></div>
         </div>
         <!-- arrow down -->
         <div class="arrow bounce text-center">
@@ -26,15 +26,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mb-30 pdetaile">
-                    <div class="section-title mb-0">{{int.package.packagename}}<span>Package</span></div>
+                    <div class="section-title mb-0">{{book.package.packagename}}<span>  {{book.date}}</span></div>
                     <div class="rating mb-30"> <i class="star active"></i> <i class="star active"></i> <i class="star active"></i> <i class="star active"></i> <i class="star active"></i>
                         <div class="reviews-count color-2">(2 Reviews)</div>
                     </div>
                     <div class="tour-page head-icon">
-                        <p><i class="ti-time"></i> {{int.date}}</p>
-                        <p><i class="ti-user"></i> {{int.package.name}}</p>
-                        <p><i class="ti-location-pin"></i>{{int.package.location}}</p>
-                        <p><i class="ti-money"></i><b> {{int.totalamt}}</b></p>
+                        <p><i class="ti-time"></i> {{book.date}}</p>
+                        <p><i class="ti-user"></i> {{book.package.name}}</p>
+                        <p><i class="ti-location-pin"></i>{{book.package.location}}</p>
+                        <p><i class="ti-money"></i><b> {{book.totalamt}}</b></p>
                     </div>
                     <h6>Information</h6>
                     <p class="mb-30">Travel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisterione venenatis lacus gravida eros ut turpis interdum ornare.</p>
@@ -50,7 +50,7 @@
                     <div class="tour-page time-table"> <span>Hotel Name</span>
                         <p>AbD Hotels</p>
                     </div>
-                    {% for itenry in int.package.iteneries.all %}
+                    {% for itenry in book.package.iteneries.all %}
                     <div class="tour-page time-table-price"> <span>Day {{itenry.day}}</span>
                         <ul class="tour-page time-table-price-include">
                             {%  for a in itenry.activities %}
@@ -70,13 +70,10 @@
                     <div class="tour-page time-table"> <span>Check Out</span>
                         <p>5.45PM</p>
                     </div>
-                    <div class="tour-page time-table"> <span><b>Total Amout Of Your Team</b>(Package*Total Members)</span>
-                        <p><b>{{int.totalamt}}</b></p>
-                    </div>
+                   
                     
                     <br>
                     <br>
-                    <!-- Gallery -->
                     
                     <br>
                     <br>
@@ -86,10 +83,7 @@
       
             </div>
         </div>
-        <div class="col-md-12 booknowbutton container">
-            <button class="butn-dark p-5" ><a href="{% url 'payment' int.id %}"span>Payment</span></a></button>
-            <button class="butn-dark1 p-5"  onclick="return confirm('Are you sure..?')" ><a href="{% url 'removeint' int.id %}"span>Remove From Intrest</span></a></button>
-        </div>
+
         
         
        
