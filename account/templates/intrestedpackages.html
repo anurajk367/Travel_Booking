@@ -1,0 +1,117 @@
+{% extends 'headandfoot.html' %}
+{% block headandfoot %}
+{% load static %}
+
+
+    <!-- Header Banner -->
+    <div class="banner-header section-padding valign bg-img bg-fixed back-position-center" data-overlay-dark="6" data-background="{% static 'img/slider/2.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 caption mt-90">
+                    
+                    <h1>Intrested <span>Packages</span></h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tours 1 -->
+    <section class="tours1 section-padding bg-lightnav" data-scroll-index="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">Intrested <span>Packages</span></div>
+                    
+                    
+                </div>
+                
+            </div>
+            <div class="row">
+                {% for i in intrested %}
+            <div class="col-md-4">
+                <div class="item">
+                    <div class="position-re o-hidden"><img src="{{i.package.image.url}}" alt=""></div> <span class="category"><a href="#0">$00.00</a></span>
+                    <div class="con">
+                        <h5><a href="{% url 'inpackagedetail' i.id %}">{{i.package.packagename}}</a> </h5>
+                        <div class="line"></div>
+                        <div class="row facilities">
+                            <div class="col col-md-12">
+                                <ul>
+                                    <li><i class="ti-time"></i> {{i.package.days}}</li>
+                                    <li><i class="ti-user"></i> 6+</li>
+                                    <li><i class="ti-location-pin"></i> {{i.package.location}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Footer -->
+    <footer class="footer clearfix">
+        <div class="container">
+            <!-- First footer -->
+
+            <div class="second-footer">
+                <div class="row">
+                    <!-- about & social icons -->
+                    <div class="col-md-4 widget-area">
+                        <div class="widget clearfix">
+                            <div > <h1 class="text-light">Address</h1></div>
+                            <div class="widget-text">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum numquam, error tempore laudantium debitis voluptatem nulla, nobis cupiditate commodi iste doloremque</p>
+                                <div class="social-icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                        <li class="ms-5"><a href="#"><i class="ti-twitter"></i></a></li>
+                                        <li class="ms-5"><a href="#"><i class="ti-facebook"></i></a></li>
+                                        <li class="ms-5"><a href="#"><i class="ti-youtube"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- phone -->
+                    <div class="col-md-3 offset-md-1 widget-area">
+                        <div class="widget clearfix usful-links">
+                            <h3 class="widget-title">Phone Number</h3>
+                            <p>99999999999</p>
+
+                           
+                        </div>
+                    </div>
+                    <!-- email -->
+                    <div class="col-md-4 widget-area">
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Email</h3>
+                            <p>viewmore@gmail.com</p>
+                            <div class="widget-newsletter">
+                                <form action="#">
+                                    <input type="widget-area" placeholder="Send your thoughts...." required>
+                                    <button type="submit">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom footer -->
+            <div class="bottom-footer-text">
+                <div class="row copyright">
+                    <div class="col-md-12">
+                        <p class=" container">Thank You</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    
+   
+    {% endblock headandfoot %}

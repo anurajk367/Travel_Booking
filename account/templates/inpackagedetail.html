@@ -1,0 +1,158 @@
+{% extends 'headandfoot.html' %}
+{% block headandfoot %}
+{% load static %}
+
+
+
+<!-- Tour Page Slider -->
+ <!-- Tour Content -->
+ 
+     <!-- Tour Page Slider -->
+     <header class="header slider">
+        <div class="owl-carousel owl-theme">
+            <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{int.package.image.url}}"></div>
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{int.package.image2.url}}"></div>
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{int.package.image.url}}"></div>
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background=" {{int.package.image3.url}}"></div>
+        </div>
+        <!-- arrow down -->
+        <div class="arrow bounce text-center">
+            <a href="#" data-scroll-nav="1" class=""> <i class="ti-arrow-down"></i> </a>
+        </div>
+    </header>
+    <!-- Tour Content -->
+    <section class="tour-page section-padding" data-scroll-index="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mb-30 pdetaile">
+                    <div class="section-title mb-0">{{int.package.packagename}}<span>{{int.package.packagename}}</span></div>
+                    <div class="rating mb-30"> <i class="star active"></i> <i class="star active"></i> <i class="star active"></i> <i class="star active"></i> <i class="star active"></i>
+                        <div class="reviews-count color-2">(2 Reviews)</div>
+                    </div>
+                    <div class="tour-page head-icon">
+                        <p><i class="ti-time"></i> {{int.date}}</p>
+                        <p><i class="ti-user"></i> {{int.package.name}}</p>
+                        <p><i class="ti-location-pin"></i>{{int.package.location}}</p>
+                        <p><i class="ti-money"></i><b> {{int.totalamt}}</b></p>
+                    </div>
+                    <h6>Information</h6>
+                    <p class="mb-30">Travel non lorem ac erat suscipit bibendum nulla facilisi. Sedeuter nunc volutpat miss sapien conseyen turpeutionyer masin libero sevenion vusetion viventa augue sit amet hendrerit vestibulum. Duisterione venenatis lacus gravida eros ut turpis interdum ornare.</p>
+                    
+                    <p class="mb-30">Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat rana volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc vousa molis sapien velet conseyer turpeutionyer masin libero sempe molis.</p>
+                    <!-- tour-page time-table -->
+                    <div class="tour-page time-table"> <span>Departure</span>
+                        <p>Calicut International Airport</p>
+                    </div>
+                    <div class="tour-page time-table"> <span>Departure Picking Time</span>
+                        <p>7.00AM</p>
+                    </div>
+                    <div class="tour-page time-table"> <span>Hotel Name</span>
+                        <p>AbD Hotels</p>
+                    </div>
+                    {% for itenry in int.package.iteneries.all %}
+                    <div class="tour-page time-table-price"> <span>Day {{itenry.day}}</span>
+                        <ul class="tour-page time-table-price-include">
+                            {%  for a in itenry.activities %}
+
+                            <li><i class="ti-check"></i> {{ a}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                    
+                    <div class="tour-page time-table"> <span>Return To Airport</span>
+                        <p>5.00PM</p>
+                    </div>
+                    <div class="tour-page time-table"> <span>Departure </span>
+                        <p>Calicut International Airport</p>
+                    </div>
+                    <div class="tour-page time-table"> <span>Check Out</span>
+                        <p>5.45PM</p>
+                    </div>
+                    <div class="tour-page time-table"> <span><b>Total Amout Of Your Team</b>(Package*Total Members)</span>
+                        <p><b>{{int.totalamt}}</b></p>
+                    </div>
+                    
+                    <br>
+                    <br>
+                    <!-- Gallery -->
+                    
+                    <br>
+                    <br>
+                
+                    
+                </div>
+      
+            </div>
+        </div>
+        <div class="col-md-12 booknowbutton container">
+            <button class="butn-dark p-5" ><a href="{% url 'payment' int.id %}"span>Payment</span></a></button>
+            <button class="butn-dark1 p-5"  onclick="return confirm('Are you sure..?')" ><a href="{% url 'removeint' int.id %}"span>Remove From Intrest</span></a></button>
+        </div>
+        
+        
+       
+    </section>
+   
+    <!-- Footer -->
+    <footer class="footer clearfix">
+        <div class="container">
+            <!-- First footer -->
+
+            <div class="second-footer">
+                <div class="row">
+                    <!-- about & social icons -->
+                    <div class="col-md-4 widget-area">
+                        <div class="widget clearfix">
+                            <div > <h1 class="text-light">Address</h1></div>
+                            <div class="widget-text">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum numquam, error tempore laudantium debitis voluptatem nulla, nobis cupiditate commodi iste doloremque</p>
+                                <div class="social-icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                        <li class="ms-5"><a href="#"><i class="ti-twitter"></i></a></li>
+                                        <li class="ms-5"><a href="#"><i class="ti-facebook"></i></a></li>
+                                        <li class="ms-5"><a href="#"><i class="ti-youtube"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- phone -->
+                    <div class="col-md-3 offset-md-1 widget-area">
+                        <div class="widget clearfix usful-links">
+                            <h3 class="widget-title">Phone Number</h3>
+                            <p>99999999999</p>
+
+                           
+                        </div>
+                    </div>
+                    <!-- email -->
+                    <div class="col-md-4 widget-area">
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Email</h3>
+                            <p>viewmore@gmail.com</p>
+                            <div class="widget-newsletter">
+                                <form action="#">
+                                    <input type="widget-area" placeholder="Send your thoughts...." required>
+                                    <button type="submit">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom footer -->
+            <div class="bottom-footer-text">
+                <div class="row copyright">
+                    <div class="col-md-12">
+                        <p class=" container">Thank You</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+{% endblock headandfoot %}

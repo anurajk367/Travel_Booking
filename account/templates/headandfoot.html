@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Mirrored from duruthemes.com/demo/html/travol/multipage-slideshow/tours.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Aug 2023 07:52:33 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Viewmore</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'css/plugins.css'  %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    
+    
+
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader-bg"></div>
+    <div id="preloader">
+        <div id="preloader-status">
+            <div class="preloader-position loader"> <span></span> </div>
+        </div>
+    </div>
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo-wrapper">
+                <a class="logo" href="{% url 'h' %}"> <img src="#" class="logo-img" alt=""> </a>
+            </div>
+            <!-- Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="ti-menu"></i></span> </button>
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'h' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about'%}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'upevent'%}">Upcoming Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'tours'%}">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'cpackage'%}">Create Package</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'inpackage'%}">Intrested Package
+                        <span class=" badge bg-success ">{{count}}</span>
+                    </a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'mytrip' %}">My Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact'%}">Contact</a></li>
+                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Pofile <i class="ti-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item"><span>{{request.user.first_name}}</span></a></li>
+                            
+                        </ul>
+                    </li>
+                     <li class="nav-item"><a class="nav-link" onclick="return confirm('Are you sure..?')" href="{% url 'logout'%}">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header Banner -->
+    <!-- <div class="banner-header section-padding valign bg-img bg-fixed back-position-center" data-overlay-dark="6" data-background="img/slider/2.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 caption mt-90">
+                    <h5>Choose your tour</h5>
+                    <h1>Most Popular <span>Packages</span></h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Content here start -->
+
+
+    <main>
+
+        
+    </main>
+
+
+
+    
+    <!-- Content here end -->
+    
+    <!-- jQuery -->
+    <!-- <script src="../static/js/"></script> -->
+    <script src=" {% static 'js/jquery-3.6.3.min.js'  %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.0.min.js '  %}"></script>
+    <script src="{% static 'js/modernizr-2.6.2.min.js'  %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js'  %}"></script>
+    <script src="{% static 'jquery.isotope.v3.0.2.js '  %}"></script>
+    <script src="{% static 'js/pace.js'  %}"></script>
+    <script src="{% static 'js/popper.min.js'  %}"></script>
+    <script src="{% static 'js/bootstrap.min.js '  %}"></script>
+    <script src="{% static 'js/scrollIt.min.js '  %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js'  %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'  %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js'  %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.js'  %}"></script>
+    <script src="{% static 'js/YouTubePopUp.js'  %}"></script>
+    <script src="{% static 'js/select2.js'  %}"></script>
+    <script src="{% static 'js/datepicker.js'  %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js '  %}"></script>
+    <script src="{% static 'js/smooth-scroll.min.js'  %}"></script>
+    <script src="{% static 'js/custom.js'  %}"></script>
+    <script src="{% static 'js/vegas.slider.min.js'  %}"></script>
+
+
+
+{% block headandfoot %}
+{% endblock headandfoot %}
+</body>
+
+<!-- Mirrored from duruthemes.com/demo/html/travol/multipage-slideshow/tours.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Aug 2023 07:52:33 GMT -->
+</html>

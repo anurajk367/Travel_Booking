@@ -1,0 +1,509 @@
+
+    
+    <!-- Kenburns Slider -->
+    <aside class=" kenburns-section" id="kenburnsSliderContainer" data-overlay-dark="3">
+        <div class="kenburns-inner h-100">
+            <div class="v-middle caption text-center">
+                <div class="container">
+                    <div class="row h-100 justify-content-center">
+                        <div class="headin" style="margin-left: 1240px; margin-bottom: -150px;">
+                            <h4>Let's Enjoy the Indian Culture</h4>
+                            <h1>Explore The India <br> with <br><span>Viewmore</span></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Tour Search -->
+    <div class="booking-wrapper">
+        <div class="container">
+            <div class="tour-inner clearfix form-inline justify-content-center">
+                <form action="https://duruthemes.com/demo/html/travol/multipage-slideshow/tours.html" class="form1 clearfix">
+                    <div class="col1 c1">
+                        <div class="input2_wrapper">
+                            <label>Where to?</label>
+                            <div class="input2_inner">
+                                <input type="text" class="form-control input" placeholder="Where to?">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col1 c2">
+                        <div class="select1_wrapper">
+                            <label>Destinations</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="0">Destinations</option>
+                                    <option value="1">Greece</option>
+                                    <option value="2">London</option>
+                                    <option value="3">Maldives</option>
+                                    <option value="4">Paris</option>
+                                    <option value="5">Rome</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col1 c4">
+                        <div class="select1_wrapper">
+                            <label>Duration</label>
+                            <div class="select1_inner">
+                                <select class="select2 select" style="width: 100%">
+                                    <option value="0">Duration</option>
+                                    <option value="1">1 Day Tour</option>
+                                    <option value="2">2-4 Days Tour</option>
+                                    <option value="3">5-7 Days Tour</option>
+                                    <option value="4">7+ Days Tour</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col1 c5">
+                        <button class="btn-form1-submit"><i class="ti-search"></i> Find Now</button>
+                        <!-- <button type="submit" class="btn-form1-submit"><i class="ti-search"></i> Find Now</button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  
+    <!-- About -->
+    <section class="about cover section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
+                    <div class="section-subtitle">The best travel agency</div>
+                    <div class="section-title">Discover the <span>world</span> with our guide</div>
+                    <p>You can choose any country with good tourism. Agency elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat. Donec in quis the pellentesque velit. Donec id velit ac arcu posuere blane.</p>
+                    <p>Hotel ut nisl quam nestibulum ac quam nec odio elementum ceisue the miss varius natoque penatibus et magnis dis parturient monte.</p>
+                    <ul class="list-unstyled about-list mb-30">
+                        <li>
+                            <div class="about-list-icon"> <span class="ti-check"></span> </div>
+                            <div class="about-list-text">
+                                <p>20 Years of Experience</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="about-list-icon"> <span class="ti-check"></span> </div>
+                            <div class="about-list-text">
+                                <p>150+ Tour Destinations</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Info -->
+                    <div class="phone-call mb-30">
+                        <div class="icon"><span class="flaticon-phone-call"></span></div>
+                        <div class="text">
+                            <p>For information</p> <a href="tel:855-333-4444">99999999999</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-1 animate-box" data-animate-effect="fadeInUp">
+                    <div class="img-exp">
+                        <div class="-img">
+                            <div class="img " s> <img tyle="border: 10px; border-color: green;" src="{% static 'img/about2.jpg' %}" class="img-fluid " alt=""> </div>
+                        </div>
+
+                        
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<!-- Tours 1 -->
+<section class="tours1 section-padding bg-lightnav" data-scroll-index="1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-subtitle"><span>Choose your place</span></div>
+                <div class="section-title">Popular <span>Packages</span></div>
+            </div>
+        </div>
+        <div class="row">
+            {% for i in packages %}
+            <div class="col-md-8">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src=" {{i.image.url}}" alt=""> </div> <span class="category"><a href="#0">$00.00</a></span>
+                    <div class="con">
+                        <div class="rating"> <i class="star active"></i> <i class="star active"></i> <i class="star active"></i> <i class="star active"></i> <i class="star"></i>
+                            <div class="reviews-count">(2 Reviews)</div>
+                        </div>
+                        <h5><a href="{% url 'tourdetail' i.id %}">{{i.packagename}}</a></h5>
+                        <div class="line"></div>
+                        <div class="row facilities">
+                            <div class="col col-md-12">
+                                <ul>
+                                    <li><i class="ti-time"></i>{{i.days}}</li>
+                                    <li><i class="ti-user"></i> 12+</li>
+                                    <li><i class="ti-location-pin"></i>{{i.location}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="item">
+                    <div class="position-re o-hidden"><img src="{% static 'img/tours/kerala.jpg' %}" alt=""></div> <span class="category"><a href="#0">$00.00</a></span>
+                    <div class="con">
+                        <h5><a href="{% url 'tourdetail' i.id %}">{{i.packagename}}</a> </h5>
+                        <div class="line"></div>
+                        <div class="row facilities">
+                            <div class="col col-md-12">
+                                <ul>
+                                    <li><i class="ti-time"></i> {{i.days}}</li>
+                                    <li><i class="ti-user"></i> 10+</li>
+                                    <li><i class="ti-location-pin"></i> {{i.location}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+    <!-- Numbers -->
+    <section class="numbers">
+        <div class="section-padding bg-img bg-fixed back-position-center" data-background="{% static 'img/slider/24.jpg' %}" data-overlay-dark="6">
+            <div class="container">
+                <div class="row">
+                   
+                    <div class="col-md-3" style="margin-left: 400px;">
+                        <div class="item text-center"> 
+                            <span class="icon">
+                                <i class="front flaticon-ship"></i>
+                                <i class="back flaticon-ship"></i>
+                            </span>
+                            <!-- <h3 class="count">100</h3> -->
+                            <h1>Viewmore</h1>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Destination 1 -->
+    <section class="destination1 section-padding bg-lightnav">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-subtitle">Top Destination</div>
+                    <div class="section-title">Popular <span>Destination</span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="position-re o-hidden "><img class="desimg" src="{% static 'img/destination/alappuzha.jpg' %}" alt=""></div> 
+                            <!-- <span class="category"><a href="#0">New</a></span> -->
+                            <div class="con"> 
+                                <h5><a href="tour-details.html"><i class="ti-location-pin"></i> Alappuzha</a></h5>
+                                <div class="line"></div>
+                                <div class="row facilities">
+                                    <div class="col col-md-8">
+                                        <p>4 Tour Packages</p>
+                                    </div>
+                                    <div class="col col-md-4 text-right">
+                                        <div class="permalink"><a href="tour-details.html">Explore <i class="ti-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img class="desimg" src="{% static 'img/destination/munnar.jpg' %}" alt=""> </div> 
+                            <!-- <span class="category"><a href="#0">25% OFF</a></span> -->
+                            <div class="con"> 
+                                <h5><a href="tour-details.html"><i class="ti-location-pin"></i> Munnar</a></h5>
+                                <div class="line"></div>
+                                <div class="row facilities">
+                                    <div class="col col-md-8">
+                                        <p>3 Tour Packages</p>
+                                    </div>
+                                    <div class="col col-md-4 text-right">
+                                        <div class="permalink"><a href="tour-details.html">Explore <i class="ti-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"><img class="desimg" src="{% static 'img/destination/lotus.webp' %}" alt=""></div> 
+                            <!-- <span class="category"><a href="#0">7 Tours</a></span> -->
+                            <div class="con">
+                                <h5><a href="#0"><i class="ti-location-pin"></i> Delhi</a></h5>
+                                <div class="line"></div>
+                                <div class="row facilities">
+                                    <div class="col col-md-8">
+                                        <p>7 Tour Packages</p>
+                                    </div>
+                                    <div class="col col-md-4 text-right">
+                                        <div class="permalink"><a href="tour-details.html">Explore <i class="ti-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"><img class="desimg" src="{% static 'img/destination/leh.webp' %}" alt=""></div> 
+                            <!-- <span class="category"><a href="#0">New</a></span> -->
+                            <div class="con">
+                                <h5><a href="#0"><i class="ti-location-pin"></i> Leh</a></h5>
+                                <div class="line"></div>
+                                <div class="row facilities">
+                                    <div class="col col-md-8">
+                                        <p>6 Tour Packages</p>
+                                    </div>
+                                    <div class="col col-md-4 text-right">
+                                        <div class="permalink"><a href="tour-details.html">Explore <i class="ti-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"><img class="desimg" src="{% static 'img/destination/hampi.webp' %}" alt=""></div> 
+                            <!-- <span class="category"><a href="#0">15% OFF</a></span> -->
+                            <div class="con">
+                                <h5><a href="#0"><i class="ti-location-pin"></i> Hampi</a></h5>
+                                <div class="line"></div>
+                                <div class="row facilities">
+                                    <div class="col col-md-8">
+                                        <p>10 Tour Packages</p>
+                                    </div>
+                                    <div class="col col-md-4 text-right">
+                                        <div class="permalink"><a href="tour-details.html">Explore <i class="ti-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"><img class="desimg" src="{% static 'img/destination/punjab.webp' %}" alt=""></div> 
+                            <!-- <span class="category"><a href="tours2.html">7 Tours</a></span> -->
+                            <div class="con">
+                                <h5><a href="tour-details.html"><i class="ti-location-pin"></i> Punjab</a></h5>
+                                <div class="line"></div>
+                                <div class="row facilities">
+                                    <div class="col col-md-8">
+                                        <p>7 Tour Packages</p>
+                                    </div>
+                                    <div class="col col-md-4 text-right">
+                                        <div class="permalink"><a href="tour-details.html">Explore <i class="ti-arrow-right"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Tour Video -->
+    <!-- <section class="dynamic-video-wrapper" data-overlay-dark="3">
+        <video width="100%" height="100%" autoplay="autoplay" muted preload="auto" loop="loop">
+            <source src="https://duruthemes.com/demo/html/travol/travel-video.mp4" type="video/mp4">
+        </video>
+        <div class="wrap-content v-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        
+                        <h1>Costa Victoria Cochin</h1>
+                        <h4><i class="ti-location-pin"></i> Maldives &nbsp;&nbsp; <i class="ti-timer"></i> 4 Days + 3 Nights</h4>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+
+
+    
+    <!-- carousal -->
+    <footer class="footer clearfix">
+        <div class="container">
+
+            <img class="carousalimg" src="{% static 'img/slider/24.jpg' %}" alt="">
+            
+            
+    </footer>
+
+
+   
+    <!-- Blog -->
+    <section class="blog section-padding bg-transparent">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-subtitle"><span>Travel Blog</span></div>
+                    <div class="section-title"><span>Travel</span> Experience</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="{% static 'img/blog/7.jpg' %}" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>02</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="blog.html">Travel</a>
+                                </span>
+                                <h5><a href="post.html">Practical information for traveling to Egypt</a></h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="{% static 'img/blog/8.jpg' %}" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>04</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="blog.html">Tours</a>
+                                </span>
+                                <h5><a href="post.html">Most Popular Yacht Charter Routes</a></h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="{% static 'img/blog/9.jpg' %}" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>06</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="blog.html">Travel</a>
+                                </span>
+                                <h5><a href="post.html">Tips Towards a Flawless Honeymoon</a></h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="{% static 'img/blog/10.jpg' %}" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>10</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="blog.html">Travel</a>
+                                </span>
+                                <h5><a href="post.html">5 things you can not miss in Miami</a></h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="{% static 'img/blog/12.jpg' %}" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>15</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="blog.html">Tours</a>
+                                </span>
+                                <h5><a href="post.html">Family Adventure Tours for Teens & Kids</a></h5>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="{% static 'img/blog/13.jpg' %}" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>18</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="blog.html">Tours</a>
+                                </span>
+                                <h5><a href="post.html">Small group tours with flights from the USA</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer clearfix">
+        <div class="container">
+            <!-- First footer -->
+
+            <div class="second-footer">
+                <div class="row">
+                    <!-- about & social icons -->
+                    <div class="col-md-4 widget-area">
+                        <div class="widget clearfix">
+                            <div > <h1 class="text-light">Address</h1></div>
+                            <div class="widget-text">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum numquam, error tempore laudantium debitis voluptatem nulla, nobis cupiditate commodi iste doloremque</p>
+                                <div class="social-icons">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                        <li class="ms-5"><a href="#"><i class="ti-twitter"></i></a></li>
+                                        <li class="ms-5"><a href="#"><i class="ti-facebook"></i></a></li>
+                                        <li class="ms-5"><a href="#"><i class="ti-youtube"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- phone -->
+                    <div class="col-md-3 offset-md-1 widget-area">
+                        <div class="widget clearfix usful-links">
+                            <h3 class="widget-title">Phone Number</h3>
+                            <p>99999999999</p>
+
+                           
+                        </div>
+                    </div>
+                    <!-- email -->
+                    <div class="col-md-4 widget-area">
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Email</h3>
+                            <p>viewmore@gmail.com</p>
+                            <div class="widget-newsletter">
+                                <form action="#">
+                                    <input type="widget-area" placeholder="Send your thoughts...." required>
+                                    <button type="submit">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom footer -->
+            <div class="bottom-footer-text">
+                <div class="row copyright">
+                    <div class="col-md-12">
+                        <p class=" container">Thank You</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    
+    <script>
+        $(document).ready(function() {
+            $('#kenburnsSliderContainer').vegas({
+                slides: [{
+                    src: "{% static 'img/slider/27.jpg' %}"
+                }, {
+                    src: "{% static 'img/slider/23.jpg' %}"
+                }, {
+                    src: "{% static 'img/slider/21.jpg' %}"
+                }, {
+                    src: "{% static 'img/slider/23.jpg' %}"
+                }],
+                overlay: true,
+                transition: 'fade2',
+                animation: 'kenburnsUpRight',
+                transitionDuration: 1000,
+                delay: 10000,
+                animationDuration: 20000
+            });
+        });
+    </script>
